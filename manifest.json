@@ -1,0 +1,23 @@
+{
+    "name": "領収書撮影アプリ",
+    "short_name": "領収書撮影",
+    "description": "領収書をスマホで撮影してWebhookに自動送信するPWAアプリ",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#667eea",
+    "theme_color": "#4A90E2",
+    "lang": "ja",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%234A90E2' width='512' height='512' rx='100'/><text x='256' y='320' font-size='256' text-anchor='middle' fill='white'>📄</text></svg>",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["productivity", "utilities"],
+    "screenshots": [],
+    "related_applications": [],
+    "prefer_related_applications": false
+}
