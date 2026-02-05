@@ -16,7 +16,7 @@
  * Make (Integromat) のWebhook URL
  * ここを実際のWebhook URLに書き換えてください
  */
-const WEBHOOK_URL = 'CHANGE_THIS_TO_YOUR_MAKE_WEBHOOK_URL';
+const WEBHOOK_URL = 'https://hook.eu1.make.com/bew33hwohwsbvp5odb6oyiakgezq9qg1';
 
 // ============================================
 // DOM要素の取得
