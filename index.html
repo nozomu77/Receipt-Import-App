@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#4A90E2">
-    <meta name="description" content="領収書をスマホで撮影してWebhookに送信するアプリ">
+    <meta name="description" content="領収書をスマホで撮影・PDFを共有してWebhookに送信するアプリ">
 
     <!-- PWA設定 -->
     <link rel="manifest" href="manifest.json">
@@ -15,23 +15,31 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="領収書撮影">
 
-    <title>領収書撮影アプリ</title>
+    <title>領収書撮影・送信アプリ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📄 領収書撮影</h1>
-            <p class="subtitle">撮影して自動送信</p>
+            <h1>📄 領収書送信</h1>
+            <p class="subtitle">撮影またはPDFを選択して自動送信</p>
         </header>
 
         <main>
-            <!-- カメラ入力（非表示） -->
+            <!-- カメラ入力（非表示）- 背面カメラ専用 -->
             <input
                 type="file"
                 id="cameraInput"
                 accept="image/*"
                 capture="environment"
+                hidden
+            >
+
+            <!-- ファイル選択入力（非表示）- 画像+PDF対応 -->
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*,application/pdf"
                 hidden
             >
 
@@ -41,15 +49,21 @@
                 <span class="btn-text">カメラで領収書を撮影</span>
             </button>
 
+            <!-- PDF・画像ファイル選択ボタン（フォールバック） -->
+            <button id="fileBtn" class="file-btn">
+                <span class="btn-icon">📎</span>
+                <span class="btn-text">PDFまたは画像を選択</span>
+            </button>
+
             <!-- ステータス表示 -->
             <div id="status" class="status"></div>
 
-            <!-- プレビュー画像 -->
+            <!-- プレビュー -->
             <div id="preview" class="preview"></div>
         </main>
 
         <footer>
-            <p>PWA対応 - ホーム画面に追加できます</p>
+            <p>PWA対応 - ホーム画面に追加して「共有」から直接送信できます</p>
         </footer>
     </div>
 

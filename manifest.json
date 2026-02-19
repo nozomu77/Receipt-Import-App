@@ -19,5 +19,18 @@
     "categories": ["productivity", "utilities"],
     "screenshots": [],
     "related_applications": [],
-    "prefer_related_applications": false
+    "prefer_related_applications": false,
+    "share_target": {
+        "action": "./index.html?share-target=true",
+        "method": "POST",
+        "enctype": "multipart/form-data",
+        "params": {
+            "files": [
+                {
+                    "name": "receipt",
+                    "accept": ["image/*", "application/pdf"]
+                }
+            ]
+        }
+    }
 }
