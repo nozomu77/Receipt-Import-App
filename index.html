@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4A90E2">
+    <meta name="description" content="領収書をスマホで撮影・PDFを共有してWebhookに送信するアプリ">
+
+    <!-- PWA設定 -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%234A90E2' width='100' height='100' rx='20'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='white'>📄</text></svg>">
+
+    <!-- iOS PWA対応 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="領収書撮影">
+
+    <title>領収書撮影・送信アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 領収書送信</h1>
+            <p class="subtitle">撮影またはPDFを選択して自動送信</p>
+        </header>
+
+        <main>
+            <!-- カメラ入力（非表示）- 背面カメラ専用 -->
+            <input
+                type="file"
+                id="cameraInput"
+                accept="image/*"
+                capture="environment"
+                hidden
+            >
+
+            <!-- ファイル選択入力（非表示）- 画像+PDF対応 -->
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*,application/pdf"
+                hidden
+            >
+
+            <!-- 撮影ボタン -->
+            <button id="captureBtn" class="capture-btn">
+                <span class="btn-icon">📷</span>
+                <span class="btn-text">カメラで領収書を撮影</span>
+            </button>
+
+            <!-- PDF・画像ファイル選択ボタン（フォールバック） -->
+            <button id="fileBtn" class="file-btn">
+                <span class="btn-icon">📎</span>
+                <span class="btn-text">PDFまたは画像を選択</span>
+            </button>
+
+            <!-- ステータス表示 -->
+            <div id="status" class="status"></div>
+
+            <!-- プレビュー -->
+            <div id="preview" class="preview"></div>
+        </main>
+
+        <footer>
+            <p>PWA対応 - ホーム画面に追加して「共有」から直接送信できます</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
