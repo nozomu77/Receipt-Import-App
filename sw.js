@@ -12,7 +12,7 @@
  */
 
 // キャッシュ名（バージョン変更で古いキャッシュを自動削除）
-const CACHE_NAME = 'receipt-app-v2';
+const CACHE_NAME = 'receipt-app-v3';
 
 // IndexedDB設定
 const DB_NAME = 'receipt-share-db';
