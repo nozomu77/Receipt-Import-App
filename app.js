@@ -22,7 +22,7 @@
  * Make (Integromat) のWebhook URL
  * ここを実際のWebhook URLに書き換えてください
  */
-const WEBHOOK_URL = 'https://hook.eu1.make.com/bew33hwohwsbvp5odb6oyiakgezq9qg1';
+const WEBHOOK_URL = 'https://hook.eu1.make.com/eu7rq7tcpbnhpda99gb2khg1bojdosps';
 
 // IndexedDB設定（sw.jsと同じ値を使用）
 const DB_NAME = 'receipt-share-db';
